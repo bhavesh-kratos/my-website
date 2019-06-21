@@ -26,7 +26,6 @@
 
     /* Create a Parallax Effect */
     .bgimg-1,
-    .bgimg-2,
     .bgimg-3 {
         background-attachment: fixed;
         background-position: center;
@@ -36,19 +35,23 @@
 
     /* First image (Logo. Full height) */
     .bgimg-1 {
-        background-image: url('/w3images/parallax1.jpg');
+        background-image: url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80');
         min-height: 100%;
     }
 
     /* Second image (Portfolio) */
     .bgimg-2 {
-        background-image: url("/w3images/parallax2.jpg");
+        background-image: url("http://digitalpixels.co/wp-content/uploads/2016/09/Website-Design.png"), url("https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"), url("https://cdn-images-1.medium.com/max/2600/0*0iz8mQSDPFle2owK");
+        background-position: left, center, right;
+        background-size: 35% 100%, 33.33% 100%, contain;      
+        background-clip: content-box;
+        background-repeat: no-repeat, no-repeat, no-repeat;
         min-height: 400px;
     }
 
     /* Third image (Contact) */
     .bgimg-3 {
-        background-image: url("/w3images/parallax3.jpg");
+        background-image: url("https://images.unsplash.com/photo-1534536281715-e28d76689b4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80");
         min-height: 400px;
     }
 
@@ -58,6 +61,14 @@
 
     .w3-hover-opacity {
         cursor: pointer;
+    }
+
+    .w3-bar {
+        color: white;
+    }
+
+    .typewrite {
+        text-decoration: none;
     }
 
     /* Turn off parallax scrolling for tablets and phones */
@@ -102,7 +113,12 @@
     <!-- First Parallax Image with Logo Text -->
     <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
         <div class="w3-display-middle" style="white-space:nowrap;">
-            <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity"></span>
+            <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">
+                <a href="" class="typewrite" data-period="2000"
+                    data-type='[ "Hi, I am Bhavesh.", "I am Creative", "I &#10084; Learning", "I &#10084; Design", "I Love to Develop." ]'>
+                    <!-- <span class="wrap"></span> -->
+                </a>
+            </span>
         </div>
     </div>
 
@@ -110,22 +126,33 @@
     <div class="w3-content w3-container w3-padding-64" id="about">
         <h3 class="w3-center">ABOUT ME</h3>
         <p class="w3-center"><em>I love learning and creating</em></p>
-        <p>
-            ----Some more details---------
-        </p>
         <div class="w3-row">
             <div class="w3-col m6 w3-center w3-padding-large">
                 <p><b><i class="fas fa-user w3-margin-right"></i>Bhavesh Pant</b></p><br>
-                <img src="/w3images/avatar_hat.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off"
-                    alt="Photo of Me" width="500" height="333">
+                <img src="https://www.linkedin.com/dms/C5104AQGyVs31hBxFFw/profile-originalphoto-shrink_450_600/0?m=AQLpV8UM9kd7xAAAAWt34ru5DG-fpxjmMg0afhpS235OnNWqLKFtvLEKtA&e=1561170876&v=beta&t=aFGEP5dg-lhmTD9J5XOlqWqIHfbTBXD9QzH9HXzqt3U"
+                    class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="200"
+                    height="383">
             </div>
 
             <!-- Hide this text on small devices -->
             <div class="w3-col m6 w3-hide-small w3-padding-large">
-                <p>Welcome to my website. Here you can find list of all my relevant works</p>
+                <p>Welcome to my website. Here you can find list of all my relevant works. I like exploring new stuffs
+                    and building new projects. Its been almost 2years since I have been coding professionally. Besides
+                    that
+                    I have been programming for almost 8years. I started with C,C++ and then moved on to high level
+                    languages like java, php, python, javascript. Then when I moved to college, I started working on
+                    several java projects and picked up android development along the way. By the time I was about to
+                    graduate I fell in love
+                    with web development and particularly frontend thus as
+                    a result I started exploring more around frontend and css frameworks. Although my interest lies in
+                    many varied
+                    areas including backend systems and machine learning and from time to time I am contributing to
+                    project around them as well.
+                    These days I am exploring more around webgl and gaming engines.
+                </p>
             </div>
         </div>
-        <p class="w3-large w3-center w3-padding-16">Im really good at:</p>
+        <p class="w3-large w3-center w3-padding-16">I am really good at:</p>
         <p class="w3-wide"><i class="fab fa-js"></i>Javascript</p>
         <div class="w3-light-grey">
             <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:99.9%">99.9%</div>
@@ -142,20 +169,20 @@
 
     <div class="w3-row w3-center w3-dark-grey w3-padding-16">
         <div class="w3-quarter w3-section">
-            <span class="w3-xlarge">14+</span><br>
-            Partners
+            <span id="github-repos" class="w3-xlarge"></span><br>
+            Github repos
         </div>
         <div class="w3-quarter w3-section">
-            <span class="w3-xlarge">55+</span><br>
+            <span class="w3-xlarge">30+</span><br>
             Projects Done
         </div>
         <div class="w3-quarter w3-section">
-            <span class="w3-xlarge">89+</span><br>
-            Happy Clients
+            <span class="w3-xlarge">2</span><br>
+            professional experience(yr)
         </div>
         <div class="w3-quarter w3-section">
-            <span class="w3-xlarge">150+</span><br>
-            Meetings
+            <span class="w3-xlarge">7+</span><br>
+            Total experience(yr)
         </div>
     </div>
 
@@ -169,53 +196,22 @@
     <!-- Container (Portfolio Section) -->
     <div class="w3-content w3-container w3-padding-64" id="portfolio">
         <h3 class="w3-center">MY WORK</h3>
-        <p class="w3-center"><em>Here are some of my latest lorem work ipsum tipsum.<br> Click on the images to make
+        <p class="w3-center"><em>Here are some of my latest work. <br> Click on the images to make
                 them bigger</em></p><br>
 
         <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
         <div class="w3-row-padding w3-center">
             <div class="w3-col m3">
-                <img src="/w3images/p1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
-                    alt="The mist over the mountains">
+                <img src="https://github.com/bhavesh-kratos/Run-from-ex/blob/master/Game-screenshot.png?raw=true"
+                    style="width:80%;height: 80%;" onclick="onClick(this)" class="w3-hover-opacity"
+                    alt="Game: <a target='_blank' href='https://github.com/bhavesh-kratos/Run-from-ex'>run from ex<a>">
             </div>
 
-            <div class="w3-col m3">
-                <img src="/w3images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
-                    alt="Coffee beans">
-            </div>
+            <div class="w3-row-padding w3-center w3-section">
 
-            <div class="w3-col m3">
-                <img src="/w3images/p3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
-                    alt="Bear closeup">
-            </div>
 
-            <div class="w3-col m3">
-                <img src="/w3images/p4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
-                    alt="Quiet ocean">
+                <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
             </div>
-        </div>
-
-        <div class="w3-row-padding w3-center w3-section">
-            <div class="w3-col m3">
-                <img src="/w3images/p5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
-                    alt="The mist">
-            </div>
-
-            <div class="w3-col m3">
-                <img src="/w3images/p6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
-                    alt="My beloved typewriter">
-            </div>
-
-            <div class="w3-col m3">
-                <img src="/w3images/p7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
-                    alt="Empty ghost train">
-            </div>
-
-            <div class="w3-col m3">
-                <img src="/w3images/p8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
-                    alt="Sailing">
-            </div>
-            <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
         </div>
     </div>
 
@@ -243,7 +239,8 @@
 
         <div class="w3-row w3-padding-32 w3-section">
             <div class="w3-col m4 w3-container">
-                <img src="/w3images/map.jpg" class="w3-image w3-round" style="width:100%">
+                <img src="https://img.theculturetrip.com/768x432/wp-content/uploads/2017/11/5621259188_e74d63cb05_b-1.jpg"
+                    class="w3-image w3-round" style="width:100%">
             </div>
             <div class="w3-col m8 w3-panel">
                 <div class="w3-large w3-margin-bottom">
@@ -275,7 +272,8 @@
 
     <!-- Footer -->
     <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
-        <a href="#home" class="w3-button w3-light-grey"><i class="fas fa-arrow-up w3-margin-right"></i>To the top</a>
+        <a href="#home" class="w3-button w3-light-grey"><i class="fas fa-arrow-up w3-margin-right"></i>To the
+            top</a>
         <div class="w3-xlarge w3-section">
             <a href="https://www.reddit.com/user/samura9_jack"><i class="fab fa-reddit-alien w3-hover-opacity"></i></a>
             <a href="https://www.facebook.com/bhavesh.pant.7"><i class="fab fa-facebook-f w3-hover-opacity"></i></a>
@@ -314,6 +312,83 @@
                 x.className = x.className.replace(" w3-show", "");
             }
         }
+
+        //---------- github info------------
+        async function githubReposInfo() {
+            let totalRepos = 0;
+            await fetch('https://api.github.com/users/bhavesh-kratos/repos')
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (reposJson) {
+                    totalRepos = reposJson.length;
+                });
+            return totalRepos;
+        }
+
+        //----------typewiter animation--------
+        var TxtType = function (el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 10) || 2000;
+            this.txt = '';
+            this.tick();
+            this.isDeleting = false;
+        };
+
+        TxtType.prototype.tick = function () {
+            var i = this.loopNum % this.toRotate.length;
+            var fullTxt = this.toRotate[i];
+
+            if (this.isDeleting) {
+                this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+
+            this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+            var that = this;
+            var delta = 200 - Math.random() * 100;
+
+            if (this.isDeleting) { delta /= 2; }
+
+            if (!this.isDeleting && this.txt === fullTxt) {
+                delta = this.period;
+                this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                this.loopNum++;
+                delta = 500;
+            }
+
+            setTimeout(function () {
+                that.tick();
+            }, delta);
+        };
+
+        window.onload = function () {
+            var elements = document.getElementsByClassName('typewrite');
+            for (var i = 0; i < elements.length; i++) {
+                var toRotate = elements[i].getAttribute('data-type');
+                var period = elements[i].getAttribute('data-period');
+                if (toRotate) {
+                    new TxtType(elements[i], JSON.parse(toRotate), period);
+                }
+            }
+            // INJECT CSS
+            var css = document.createElement("style");
+            css.type = "text/css";
+            css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+            document.body.appendChild(css);
+
+            // github repo update
+            githubReposInfo().then(function (totalRepos) {
+                var githubRepoElement = document.getElementById('github-repos');
+                githubRepoElement.innerText = totalRepos;
+            }).catch(ex)
+        };
     </script>
 
 </body>
