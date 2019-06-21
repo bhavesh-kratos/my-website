@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="https://gitcdn.xyz/repo/pi0/clippyjs/master/assets/clippy.css">
 <style>
     body,
     h1,
@@ -73,11 +74,11 @@
         text-decoration: none;
     }
 
-    .proficiency:hover{
-        color: black;        
+    .proficiency:hover {
+        color: black;
     }
 
-    .proficiency:hover > .w3-light-grey > .w3-dark-grey{
+    .proficiency:hover>.w3-light-grey>.w3-dark-grey {
         background: black !important;
     }
 
@@ -220,7 +221,8 @@
             <div class="w3-col m3">
                 <img src="https://github.com/bhavesh-kratos/Run-from-ex/blob/master/Game-screenshot.png?raw=true"
                     style="width:80%;height: 80%;" onclick="onClick(this)" class="w3-hover-opacity"
-                    alt="Game: <a target='_blank' href='https://github.com/bhavesh-kratos/Run-from-ex'>run from ex<a>" data-descrpt="A platformer game which is a part of my self learning project created using GoDot Engine in GdScript.">
+                    alt="Game: <a target='_blank' href='https://github.com/bhavesh-kratos/Run-from-ex'>run from ex<a>"
+                    data-descrpt="A platformer game which is a part of my self learning project created using GoDot Engine in GdScript.">
             </div>
 
             <div class="w3-row-padding w3-center w3-section">
@@ -299,8 +301,12 @@
                     class="fab fa-linkedin w3-hover-opacity"></i></a>
         </div>
     </footer>
+    <script src="https://unpkg.com/jquery@3.2.1"></script>
+
+    <script src="https://unpkg.com/clippyjs@latest"></script>
 
     <script>
+        let totalScrolledLength = false;
         // Modal Image Gallery
         function onClick(element) {
             document.getElementById("img01").src = element.src;
@@ -387,6 +393,32 @@
             }, delta);
         };
 
+        function amountscrolled() {
+            var winheight = $(window).height()
+            var docheight = $(document).height()
+            var scrollTop = $(window).scrollTop()
+            var trackLength = docheight - winheight
+            var pctScrolled = Math.floor(scrollTop / trackLength * 100) // gets percentage scrolled (ie: 80 NaN if tracklength == 0)
+            return pctScrolled;
+            // console.log(pctScrolled + '% scrolled')
+        }
+
+        $(window).on("scroll", function () {
+            totalScrolledLength = amountscrolled()
+        })
+
+        clippy.load('Genie', function (agent) {
+            // Do anything with the loaded agent
+            agent.show();
+            agent.speak('Hi! Welcome to Bhavesh\'s portfolio');      
+            // console.log(totalScrolledLength)      
+            // if (totalScrolledLength > 50) {
+            //     agent.speak('Ah! The projects.');
+            // }
+            
+
+        });
+
         window.onload = function () {
             var elements = document.getElementsByClassName('typewrite');
             for (var i = 0; i < elements.length; i++) {
@@ -406,10 +438,9 @@
             githubReposInfo().then(function (totalRepos) {
                 var githubRepoElement = document.getElementById('github-repos');
                 githubRepoElement.innerText = totalRepos;
-            }).catch(ex)
+            }).catch((ex) => console.log('exception', ex) )
         };
     </script>
-
 </body>
 
 </html>
