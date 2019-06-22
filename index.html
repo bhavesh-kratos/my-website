@@ -224,6 +224,12 @@
                     alt="Game: <a target='_blank' href='https://github.com/bhavesh-kratos/Run-from-ex'>run from ex<a>"
                     data-descrpt="A platformer game which is a part of my self learning project created using GoDot Engine in GdScript.">
             </div>
+            <div class="w3-col m3">
+                <img src="./snap-echarts-creator.png"
+                    style="width:80%;height: 80%;" onclick="onClick(this)" class="w3-hover-opacity"
+                    alt="Project: <a target='_blank' href='https://github.com/bhavesh-kratos/Echarts-creator'>Echarts creator<a>"
+                    data-descrpt="A React component to create and view selected set of charts from popular echarts library. This component provides an interface to the user to configure a chart from the selected options and its using e-charts and frappe-gantt underneath to generate the charts.">
+            </div>
 
             <div class="w3-row-padding w3-center w3-section">
 
@@ -410,12 +416,12 @@
         clippy.load('Genie', function (agent) {
             // Do anything with the loaded agent
             agent.show();
-            agent.speak('Hi! Welcome to Bhavesh\'s portfolio');      
+            agent.speak('Hi! Welcome to Bhavesh\'s portfolio');
             // console.log(totalScrolledLength)      
             // if (totalScrolledLength > 50) {
             //     agent.speak('Ah! The projects.');
             // }
-            
+
 
         });
 
@@ -438,7 +444,7 @@
             githubReposInfo().then(function (totalRepos) {
                 var githubRepoElement = document.getElementById('github-repos');
                 githubRepoElement.innerText = totalRepos;
-            }).catch((ex) => console.log('exception', ex) )
+            }).catch((ex) => console.log('exception', ex))
         };
     </script>
 </body>
